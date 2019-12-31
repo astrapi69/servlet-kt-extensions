@@ -14,7 +14,7 @@ plugins {
 }
 
 group = "de.alpharogroup"
-version = "1"
+version = "1.1-SNAPSHOT"
 description = "servlet-kt-extensions"
 
 

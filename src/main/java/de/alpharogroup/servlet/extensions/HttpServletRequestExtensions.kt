@@ -1,5 +1,6 @@
 package de.alpharogroup.servlet.extensions
 
+import de.alpharogroup.servlet.extensions.enums.HeaderKeyNames
 import org.apache.commons.io.IOUtils
 import java.util.*
 import javax.servlet.http.HttpServletRequest
