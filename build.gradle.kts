@@ -2,8 +2,8 @@ import org.jetbrains.kotlin.config.KotlinCompilerVersion
 import org.gradle.jvm.tasks.Jar
 import java.net.URI
 
-val servletApiVersion = "3.1.0"
-val commonsIoVersion = "2.6"
+val servletApiVersion: String by project
+val commonsIoVersion: String by project
 
 plugins {
     signing
