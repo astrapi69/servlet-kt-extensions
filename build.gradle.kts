@@ -1,8 +1,8 @@
 import org.gradle.jvm.tasks.Jar
 import java.net.URI
 
-val servletApiVersion = "4.0.1"
-val commonsIoVersion = "2.6"
+val servletApiVersion: String by project
+val commonsIoVersion: String by project
 
 plugins {
     signing
