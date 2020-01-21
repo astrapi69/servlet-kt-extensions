@@ -19,7 +19,6 @@ group = "de.alpharogroup"
 version = "1.2-SNAPSHOT"
 description = "servlet-kt-extensions"
 
-
 repositories {
     jcenter()
     mavenLocal()
