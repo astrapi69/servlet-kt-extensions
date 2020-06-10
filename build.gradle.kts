@@ -3,21 +3,24 @@ import java.net.URI
 
 val servletApiVersion: String by project
 val commonsIoVersion: String by project
+val projectVersion: String by project
+val groupPackage: String by project
+val junitJupiterVersion: String by project
 
 plugins {
     signing
     jacoco
-    kotlin("jvm") version "1.3.61"
+    kotlin("jvm") version "1.3.72"
     id("java")
     id("maven-publish")
-    id("com.github.ben-manes.versions") version "0.27.0"
+    id("com.github.ben-manes.versions") version "0.28.0"
     id("com.github.hierynomus.license") version "0.15.0"
-    id("org.jetbrains.dokka") version "0.10.0"
+    id("org.jetbrains.dokka") version "0.10.1"
 }
 
-group = "de.alpharogroup"
-version = "1.2-SNAPSHOT"
-description = "servlet-kt-extensions"
+group = groupPackage
+version = projectVersion
+description = rootProject.name
 
 repositories {
     jcenter()
@@ -29,6 +32,9 @@ dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("javax.servlet:javax.servlet-api:$servletApiVersion")
     implementation("commons-io:commons-io:$commonsIoVersion")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }
 
 // Configure existing Dokka task to output HTML to typical Javadoc directory
