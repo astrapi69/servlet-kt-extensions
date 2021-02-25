@@ -25,6 +25,19 @@ object HttpServletRequestExtensions {
         return request.getJwtToken()
     }
 
+    fun getHeaderInfoAsMap(request: HttpServletRequest): Map<String, String>? {
+        val map: MutableMap<String, String> = HashMap()
+        val headerNames: Enumeration<*> = request.headerNames
+        while (headerNames.hasMoreElements()) {
+            val key = headerNames.nextElement() as String
+            val value = request.getHeader(key)
+            map[key] = value
+        }
+        return map
+    }
+
+    fun HttpServletRequest.getHeaderInfos(): Map<String, String>? = getHeaderInfoAsMap(this)
+
     fun HttpServletRequest.getRequestBody(): String = IOUtils.toString(this.inputStream, this.characterEncoding)
 
     fun HttpServletRequest.getJwtToken(): Optional<String> =
