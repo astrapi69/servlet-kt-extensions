@@ -49,7 +49,12 @@ object HttpServletRequestExtensions {
         return request.getJwtToken()
     }
 
-    fun getHeaderInfoAsMap(request: HttpServletRequest): Map<String, String>? {
+    @JvmStatic
+    fun getHeaderInfos(request: HttpServletRequest):Map<String, String> {
+        return request.getHeaderInfoMap()
+    }
+
+    private fun getHeaderInfoAsMap(request: HttpServletRequest): Map<String, String> {
         val map: MutableMap<String, String> = HashMap()
         val headerNames: Enumeration<*> = request.headerNames
         while (headerNames.hasMoreElements()) {
@@ -60,7 +65,7 @@ object HttpServletRequestExtensions {
         return map
     }
 
-    fun HttpServletRequest.getHeaderInfos(): Map<String, String>? = getHeaderInfoAsMap(this)
+    fun HttpServletRequest.getHeaderInfoMap(): Map<String, String> = getHeaderInfoAsMap(this)
 
     fun HttpServletRequest.getRequestBody(): String = IOUtils.toString(this.inputStream, this.characterEncoding)
 
