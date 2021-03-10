@@ -69,8 +69,8 @@ publishing {
                 url.set("https://github.com/astrapi69/" + rootProject.name)
                 description.set("Extension methods for servlets, requests and response objects")
                 organization {
-                    name.set("Alpha Ro Group UG (haftungsbeschrängt)")
-                    url.set("http://www.alpharogroup.de/")
+                    name.set("Asterios Raptis")
+                    url.set("https://astrapi69.github.io/")
                 }
                 issueManagement {
                     system.set("GitHub")
