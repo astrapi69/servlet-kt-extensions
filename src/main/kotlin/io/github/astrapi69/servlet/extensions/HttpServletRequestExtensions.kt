@@ -74,5 +74,5 @@ object HttpServletRequestExtensions {
             Optional.of(this.getHeader(HeaderKeyNames.AUTHORIZATION).substring(7))
         } else Optional.empty()
 
-    fun HttpServletRequest.getApplicationPath(): String = this.getRequestURI().substring(this.getContextPath().length)
+    fun HttpServletRequest.getApplicationPath(): String = this.requestURI.substring(this.contextPath.length)
 }
