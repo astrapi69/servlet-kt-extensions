@@ -69,23 +69,23 @@ functionality of servlet-kt-extensions:
 
 Than you can add the dependency to your dependencies:
 
-	<properties>
-			...
-		<!-- servlet-kt-extensions version -->
-		<servlet-kt-extensions.version>1.4</servlet-kt-extensions.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- servlet-kt-extensions DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>servlet-kt-extensions</artifactId>
-				<version>${servlet-kt-extensions.version}</version>
-			</dependency>
-			...
-		</dependencies>
+    <properties>
+            ...
+        <!-- servlet-kt-extensions version -->
+        <servlet-kt-extensions.version>1.4</servlet-kt-extensions.version>
+            ...
+    </properties>
+            ...
+        <dependencies>
+            ...
+            <!-- servlet-kt-extensions DEPENDENCY -->
+            <dependency>
+                <groupId>io.github.astrapi69</groupId>
+                <artifactId>servlet-kt-extensions</artifactId>
+                <version>${servlet-kt-extensions.version}</version>
+            </dependency>
+            ...
+        </dependencies>
 
 # Donations
 

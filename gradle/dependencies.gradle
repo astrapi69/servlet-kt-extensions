@@ -1,0 +1,9 @@
+
+dependencies {
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("javax.servlet:javax.servlet-api:$servletApiVersion")
+    implementation("commons-io:commons-io:$commonsIoVersion")
+
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+}
