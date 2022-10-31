@@ -22,16 +22,22 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-import io.github.astrapi69.servlet.extensions.ObjectExtensions.getChecksum
-import io.github.astrapi69.test.`object`.factory.TestObjectFactory
-import org.junit.jupiter.api.Assertions
+package io.github.astrapi69.servlet.extensions
 
-fun main(args: Array<String>) {
-    val newPerson = TestObjectFactory.newPerson()
-    val md5Checksum = newPerson.getChecksum()
-    Assertions.assertEquals(md5Checksum, "6b80d6c08539433402f8b11775854717")
-    val originalMap = mapOf(1 to 0, 2 to 1, 3 to 3)
-    val filteredMap = originalMap.filterValues { it > 0 }
-    println(filteredMap)
+import io.github.astrapi69.checksum.ObjectChecksumExtensions
+import java.io.Serializable
 
+/**
+ * Provides extension methods for the HttpServletRequest class
+ */
+object ObjectExtensions {
+
+    @JvmStatic
+    fun getMD5Checksum(serializable: Serializable): String {
+        return serializable.getChecksum()
+    }
+
+    fun Serializable.getChecksum(): String = ObjectChecksumExtensions.getChecksum(this, "MD5")
 }
+
+

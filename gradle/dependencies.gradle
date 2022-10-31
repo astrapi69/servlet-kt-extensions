@@ -3,7 +3,9 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("javax.servlet:javax.servlet-api:$servletApiVersion")
     implementation("commons-io:commons-io:$commonsIoVersion")
+    implementation("io.github.astrapi69:checksum-up:$checksumUpVersion")
 
+    testImplementation("io.github.astrapi69:test-object:$testObjectVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }
