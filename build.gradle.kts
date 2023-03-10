@@ -6,16 +6,17 @@ val commonsIoVersion: String by project
 val projectVersion: String by project
 val groupPackage: String by project
 val junitJupiterVersion: String by project
+val _kotlinVersion: String by project
 
 plugins {
     signing
     jacoco
-    kotlin("jvm") version "1.4.31"
+    kotlin("jvm") version "1.8.10"
     id("java")
     id("maven-publish")
-    id("com.github.ben-manes.versions") version "0.38.0"
-    id("com.github.hierynomus.license") version "0.15.0"
-    id("org.jetbrains.dokka") version "0.10.1"
+    id("com.github.ben-manes.versions") version "0.46.0"
+    id("com.github.hierynomus.license") version "0.16.1"
+    id("org.jetbrains.dokka") version "1.8.10"
 }
 
 group = groupPackage
@@ -23,13 +24,12 @@ version = projectVersion
 description = rootProject.name
 
 repositories {
-    jcenter()
     mavenLocal()
     mavenCentral()
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
+    implementation(kotlin("stdlib"))
     implementation("javax.servlet:javax.servlet-api:$servletApiVersion")
     implementation("commons-io:commons-io:$commonsIoVersion")
 
@@ -37,19 +37,16 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }
 
-// Configure existing Dokka task to output HTML to typical Javadoc directory
-tasks.dokka {
-    outputFormat = "html"
-    outputDirectory = "$buildDir/javadoc"
+tasks.register<Jar>("dokkaHtmlJar") {
+    dependsOn(tasks.dokkaHtml)
+    from(tasks.dokkaHtml.flatMap { it.outputDirectory })
+    archiveClassifier.set("html-docs")
 }
 
-// Create dokka Jar task from dokka task output
-val dokkaJar by tasks.creating(Jar::class) {
-    group = JavaBasePlugin.DOCUMENTATION_GROUP
-    description = "Assembles Kotlin docs with Dokka"
+val dokkaJavadocJar by tasks.register<Jar>("dokkaJavadocJar") {
+    dependsOn(tasks.dokkaJavadoc)
+    from(tasks.dokkaJavadoc.flatMap { it.outputDirectory })
     archiveClassifier.set("javadoc")
-    // dependsOn(tasks.dokka) not needed; dependency automatically inferred by from(tasks.dokka)
-    from(tasks.dokka)
 }
 
 val sourcesJar by tasks.registering(Jar::class) {
@@ -62,7 +59,7 @@ publishing {
         create<MavenPublication>("mavenJava") {
             from(components["java"])
             artifact(sourcesJar.get())
-            artifact(dokkaJar)
+            artifact(dokkaJavadocJar)
 
             pom {
                 name.set(rootProject.name)
@@ -178,10 +175,10 @@ tasks.test {
 
 tasks.jacocoTestReport {
     reports {
-        xml.isEnabled = false
-        csv.isEnabled = false
-        html.isEnabled = true
-        html.destination = file("$buildDir/reports/coverage")
+        xml.required.set(false)
+        csv.required.set(false)
+        html.required.set(true)
+        html.outputLocation.set(file("$buildDir/reports/coverage"))
     }
     classDirectories.setFrom(
         sourceSets.main.get().output.asFileTree.matching {
