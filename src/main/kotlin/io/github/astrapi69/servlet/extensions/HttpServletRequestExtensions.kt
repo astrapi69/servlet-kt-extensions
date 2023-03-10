@@ -22,9 +22,9 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package de.alpharogroup.servlet.extensions
+package io.github.astrapi69.servlet.extensions
 
-import de.alpharogroup.servlet.extensions.enums.HeaderKeyNames
+import io.github.astrapi69.servlet.extensions.enums.HeaderKeyNames
 import org.apache.commons.io.IOUtils
 import java.util.*
 import javax.servlet.http.HttpServletRequest
@@ -74,5 +74,5 @@ object HttpServletRequestExtensions {
             Optional.of(this.getHeader(HeaderKeyNames.AUTHORIZATION).substring(7))
         } else Optional.empty()
 
-    fun HttpServletRequest.getApplicationPath(): String = this.getRequestURI().substring(this.getContextPath().length)
+    fun HttpServletRequest.getApplicationPath(): String = this.requestURI.substring(this.contextPath.length)
 }
