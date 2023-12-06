@@ -44,13 +44,13 @@ your project `build.gradle` if you want to import the core functionality of serv
 define version in file gradle.properties
 
 ```
-servletKtExtensionsVersion=1.4
+servletKtExtensionsVersion=2
 ```
 
 or in build.gradle ext area
 
 ```
-    servletKtExtensionsVersion = "1.4"
+    servletKtExtensionsVersion = "2"
 ```
 
 then add the dependency to the dependencies area
@@ -69,23 +69,23 @@ functionality of servlet-kt-extensions:
 
 Than you can add the dependency to your dependencies:
 
-	<properties>
-			...
-		<!-- servlet-kt-extensions version -->
-		<servlet-kt-extensions.version>1.4</servlet-kt-extensions.version>
-			...
-	</properties>
-			...
-		<dependencies>
-			...
-			<!-- servlet-kt-extensions DEPENDENCY -->
-			<dependency>
-				<groupId>io.github.astrapi69</groupId>
-				<artifactId>servlet-kt-extensions</artifactId>
-				<version>${servlet-kt-extensions.version}</version>
-			</dependency>
-			...
-		</dependencies>
+    <properties>
+            ...
+        <!-- servlet-kt-extensions version -->
+        <servlet-kt-extensions.version>2</servlet-kt-extensions.version>
+            ...
+    </properties>
+            ...
+        <dependencies>
+            ...
+            <!-- servlet-kt-extensions DEPENDENCY -->
+            <dependency>
+                <groupId>io.github.astrapi69</groupId>
+                <artifactId>servlet-kt-extensions</artifactId>
+                <version>${servlet-kt-extensions.version}</version>
+            </dependency>
+            ...
+        </dependencies>
 
 # Donations
 
