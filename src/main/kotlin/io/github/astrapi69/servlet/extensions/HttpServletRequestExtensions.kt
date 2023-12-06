@@ -27,7 +27,7 @@ package io.github.astrapi69.servlet.extensions
 import io.github.astrapi69.servlet.extensions.enums.HeaderKeyNames
 import org.apache.commons.io.IOUtils
 import java.util.*
-import javax.servlet.http.HttpServletRequest
+import jakarta.servlet.http.HttpServletRequest
 
 /**
  * Provides extension methods for the HttpServletRequest class

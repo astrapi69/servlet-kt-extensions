@@ -36,7 +36,9 @@ apply from: "gradle/publishing.gradle"
 apply from: "gradle/repositories.gradle"
 apply from: "gradle/testing.gradle"
 
-sourceCompatibility = "$projectSourceCompatibility" as Object
+java {
+    sourceCompatibility = "$projectSourceCompatibility" as Object
+}
 
 compileKotlin {
     kotlinOptions {
