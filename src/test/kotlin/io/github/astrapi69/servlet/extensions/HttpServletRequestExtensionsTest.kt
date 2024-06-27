@@ -21,8 +21,6 @@
 package io.github.astrapi69.servlet.extensions
 
 import io.github.astrapi69.servlet.extensions.enums.HeaderKeyNames
-import jakarta.servlet.ReadListener
-import jakarta.servlet.ServletInputStream
 import jakarta.servlet.http.HttpServletRequest
 import java.io.ByteArrayInputStream
 import java.util.*
@@ -47,24 +45,7 @@ class HttpServletRequestExtensionsTest {
     val expectedBody = "test body"
     val byteArrayInputStream = ByteArrayInputStream(expectedBody.toByteArray(Charsets.UTF_8))
 
-    val servletInputStream =
-        object : ServletInputStream() {
-          override fun read(): Int {
-            return byteArrayInputStream.read()
-          }
-
-          override fun isFinished(): Boolean {
-            return byteArrayInputStream.available() == 0
-          }
-
-          override fun isReady(): Boolean {
-            return true
-          }
-
-          override fun setReadListener(readListener: ReadListener?) {
-            throw UnsupportedOperationException()
-          }
-        }
+    val servletInputStream = DelegatingServletInputStream(byteArrayInputStream)
 
     `when`(request.inputStream).thenReturn(servletInputStream)
     `when`(request.characterEncoding).thenReturn("UTF-8")
