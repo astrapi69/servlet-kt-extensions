@@ -19,4 +19,8 @@ spotless {
     kotlin {
         ktfmt()
     }
+    groovyGradle {
+        target '*.gradle'
+        greclipse()
+    }
 }
