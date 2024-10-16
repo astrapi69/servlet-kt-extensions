@@ -1,8 +1,13 @@
 ## Change log
 ----------------------
 
+Version 2.2-SNAPSHOT
+-------------
+
+
 Version 2.1
 -------------
+
 ADDED:
 
 - new CHANGELOG.md file created
