@@ -4,6 +4,11 @@
 Version 2.2-SNAPSHOT
 -------------
 
+CHANGED:
+
+- update gradle to new version 8.11-rc1
+- javadoc extended
+- dependencies are managed now over bundles
 
 Version 2.1
 -------------

@@ -1,7 +1,7 @@
 dependencies {
-    implementation libs.jakarta.servlet.api
-    implementation libs.commons.io
     // Note: use of bundles...
+    implementation libs.bundles.core.dependencies
+
     testImplementation libs.bundles.unit.testing
-    testRuntimeOnly libs.junit.platform.launcher
+    testRuntimeOnly libs.bundles.test.runtime.only
 }

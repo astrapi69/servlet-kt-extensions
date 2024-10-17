@@ -21,6 +21,16 @@ mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-cor
 mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito-junit-jupiter-version" }
 
 [bundles]
+# The core dependencies
+core-dependencies = [
+    "commons-io",
+    "jakarta-servlet-api",
+]
+# Dependencies required only at test runtime, such as test execution platforms
+test-runtime-only = [
+    "junit-platform-launcher",
+]
+# Dependencies required for unit testing
 unit-testing = [
     "junit-jupiter",
     "mockito-core",
