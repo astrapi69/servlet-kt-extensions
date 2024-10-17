@@ -2,7 +2,7 @@
 
 <div style="text-align: center">
 
-[![Build Status](https://travis-ci.com/astrapi69/servlet-kt-extensions.svg?branch=master)](https://travis-ci.com/github/astrapi69/servlet-kt-extensions)
+[![Java CI with Gradle](https://github.com/astrapi69/servlet-kt-extensions/actions/workflows/gradle.yml/badge.svg)](https://github.com/astrapi69/servlet-kt-extensions/actions/workflows/gradle.yml)
 [![Coverage Status](https://codecov.io/gh/astrapi69/servlet-kt-extensions/branch/develop/graph/badge.svg)](https://codecov.io/gh/astrapi69/servlet-kt-extensions)
 [![Open Issues](https://img.shields.io/github/issues/astrapi69/servlet-kt-extensions.svg?style=flat)](https://github.com/astrapi69/servlet-kt-extensions/issues)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/servlet-kt-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.astrapi69/servlet-kt-extensions)
