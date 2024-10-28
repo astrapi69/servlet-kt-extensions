@@ -1,5 +1,9 @@
 def releaseVersion = !version.endsWith("SNAPSHOT")
 
+tasks.withType(GenerateModuleMetadata) {
+    enabled = false
+}
+
 task sourcesJar(type: Jar) {
     archiveClassifier.set("sources")
     from(sourceSets.main.allJava)

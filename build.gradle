@@ -12,6 +12,7 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'signing'
+    alias(libs.plugins.dokka.gradle.plugin)
     alias(libs.plugins.gradle.versions.plugin)
     alias(libs.plugins.grgit.gradle)
     alias(libs.plugins.kotlin.gradle.plugin)

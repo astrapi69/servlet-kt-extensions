@@ -1,14 +1,14 @@
 [versions]
 commons-io-version = "2.17.0"
+gradle-plugin-dokka-gradle-plugin-version = "2.0.0-Beta"
 gradle-plugin-grgit-version = "5.3.0"
 gradle-plugin-kotlin-version = "2.1.0-Beta2"
 gradle-plugin-license-version = "0.16.1"
-gradle-plugin-spotless-version = "7.0.0.BETA3"
-gradle-plugin-version-catalog-update-version = "0.8.4"
+gradle-plugin-spotless-version = "7.0.0.BETA4"
+gradle-plugin-version-catalog-update-version = "0.8.5"
 gradle-plugin-versions-version = "0.51.0"
 jakarta-servlet-api-version = "6.1.0"
-junit-jupiter-version = "5.11.2"
-junit-platform-launcher-version = "1.11.2"
+junit-jupiter-version = "5.11.3"
 mockito-core-version = "5.14.2"
 mockito-junit-jupiter-version = "5.14.2"
 
@@ -16,7 +16,7 @@ mockito-junit-jupiter-version = "5.14.2"
 commons-io = { module = "commons-io:commons-io", version.ref = "commons-io-version" }
 jakarta-servlet-api = { module = "jakarta.servlet:jakarta.servlet-api", version.ref = "jakarta-servlet-api-version" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version" }
-junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform-launcher-version" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-core-version" }
 mockito-junit-jupiter = { module = "org.mockito:mockito-junit-jupiter", version.ref = "mockito-junit-jupiter-version" }
 
@@ -38,6 +38,7 @@ unit-testing = [
 ]
 
 [plugins]
+dokka-gradle-plugin = { id = "org.jetbrains.dokka", version.ref = "gradle-plugin-dokka-gradle-plugin-version" }
 gradle-versions-plugin = { id = "com.github.ben-manes.versions", version.ref = "gradle-plugin-versions-version" }
 grgit-gradle = { id = "org.ajoberstar.grgit", version.ref = "gradle-plugin-grgit-version" }
 kotlin-gradle-plugin = { id = "org.jetbrains.kotlin.jvm", version.ref = "gradle-plugin-kotlin-version" }
